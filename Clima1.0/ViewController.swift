@@ -9,15 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //SearchBar
-    @IBOutlet weak var searchBar: UITextField!
-    //Containers View
-    @IBOutlet weak var topContainerV: UIView!
-    @IBOutlet weak var middleContainerV: UIView!
-    @IBOutlet weak var bottomContainerV: UIView!
-    //Location
-    @IBOutlet weak var Location: UILabel!
-    
+    //OUTLET
+        //SearchBar
+        @IBOutlet weak var searchBar: UITextField!
+        //Containers View
+        @IBOutlet weak var topContainerV: UIView!
+        @IBOutlet weak var middleContainerV: UIView!
+        @IBOutlet weak var bottomContainerV: UIView!
+        //Location
+        @IBOutlet weak var Location: UILabel!
+        //current temperature
+        @IBOutlet weak var currentTV: UILabel!
+        @IBOutlet weak var currentT: UILabel!
+        //Weather current feal like
+        @IBOutlet weak var currentWFL: UILabel!
+        //High and low current temperature
+        @IBOutlet weak var highTV: UILabel!
+        @IBOutlet weak var lowTV: UILabel!
+    //ACTION
     
     override func viewDidLoad() {
         super.viewDidLoad()
