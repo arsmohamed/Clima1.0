@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "windy-snow.png",
       "idiom" : "universal"
     }
   ],

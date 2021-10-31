@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //OUTLET
+    //MARK: - OUTLET
         //SearchBar
         @IBOutlet weak var searchBar: UITextField!
         //Containers View
@@ -18,15 +18,19 @@ class ViewController: UIViewController {
         @IBOutlet weak var bottomContainerV: UIView!
         //Location
         @IBOutlet weak var Location: UILabel!
-        //current temperature
+        //current temperature TOP
         @IBOutlet weak var currentTV: UILabel!
         @IBOutlet weak var currentT: UILabel!
-        //Weather current feal like
+        //Weather current feal like TOP
         @IBOutlet weak var currentWFL: UILabel!
-        //High and low current temperature
+        //High and low current temperature TOP
         @IBOutlet weak var highTV: UILabel!
         @IBOutlet weak var lowTV: UILabel!
-    //ACTION
+        //Weather massage Middle
+        @IBOutlet weak var weatherMassage: UILabel!
+    
+    
+    //MARK: - ACTION
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,11 @@ class ViewController: UIViewController {
         searchBar.attributedPlaceholder = NSAttributedString(
             string: "Search",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
+        //underlining weather massage
+        weatherMassage.attributedText = NSAttributedString(
+            string: "Partly cloudy condition expected around 5AM.",
+            attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]
         )
     }
 
