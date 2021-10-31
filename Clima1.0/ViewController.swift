@@ -28,6 +28,10 @@ class ViewController: UIViewController {
         @IBOutlet weak var lowTV: UILabel!
         //Weather massage Middle
         @IBOutlet weak var weatherMassage: UILabel!
+        //container with tepreature icon
+        @IBOutlet weak var currentStackViewWeather: UIView!
+        //Forcast underline
+        @IBOutlet weak var forCastUnderline: UILabel!
     
     
     //MARK: - ACTION
@@ -40,10 +44,12 @@ class ViewController: UIViewController {
         topContainerV.layer.cornerRadius = 21
         middleContainerV.layer.cornerRadius = 21
         bottomContainerV.layer.cornerRadius = 21
+        currentStackViewWeather.layer.cornerRadius = 100
         //this to allow the edges to cut
         topContainerV.layer.masksToBounds = true
         middleContainerV.layer.masksToBounds = true
         bottomContainerV.layer.masksToBounds = true
+        currentStackViewWeather.layer.masksToBounds = true
         //placeholder coloer
         searchBar.attributedPlaceholder = NSAttributedString(
             string: "Search",
@@ -52,6 +58,10 @@ class ViewController: UIViewController {
         //underlining weather massage
         weatherMassage.attributedText = NSAttributedString(
             string: "Partly cloudy condition expected around 5AM.",
+            attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]
+        )
+        forCastUnderline.attributedText = NSAttributedString(
+            string: "10-Day FORECAST",
             attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]
         )
     }
