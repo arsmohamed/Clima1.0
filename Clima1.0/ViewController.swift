@@ -60,7 +60,51 @@ class ViewController: UIViewController {
         @IBOutlet weak var CurrentTemp9: UILabel!
     //Bottom
     @IBOutlet weak var FutureForcaset: UILabel!
-
+        //Day
+        @IBOutlet weak var Day0: UILabel!
+        @IBOutlet weak var Day1: UILabel!
+        @IBOutlet weak var Day2: UILabel!
+        @IBOutlet weak var Day3: UILabel!
+        @IBOutlet weak var Day4: UILabel!
+        @IBOutlet weak var Day5: UILabel!
+        @IBOutlet weak var Day6: UILabel!
+        @IBOutlet weak var Day7: UILabel!
+        @IBOutlet weak var Day8: UILabel!
+        @IBOutlet weak var Day9: UILabel!
+        //Icon
+        @IBOutlet weak var DayIcon0: UIImageView!
+        @IBOutlet weak var DayIcon1: UIImageView!
+        @IBOutlet weak var DayIcon2: UIImageView!
+        @IBOutlet weak var DayIcon3: UIImageView!
+        @IBOutlet weak var DayIcon4: UIImageView!
+        @IBOutlet weak var DayIcon5: UIImageView!
+        @IBOutlet weak var DayIcon6: UIImageView!
+        @IBOutlet weak var DayIcon7: UIImageView!
+        @IBOutlet weak var DayIcon8: UIImageView!
+        @IBOutlet weak var DayIcon9: UIImageView!
+        //High Temp
+        @IBOutlet weak var DayHighTemp0: UILabel!
+        @IBOutlet weak var DayHighTemp1: UILabel!
+        @IBOutlet weak var DayHighTemp2: UILabel!
+        @IBOutlet weak var DayHighTemp3: UILabel!
+        @IBOutlet weak var DayHighTemp4: UILabel!
+        @IBOutlet weak var DayHighTemp5: UILabel!
+        @IBOutlet weak var DayHighTemp6: UILabel!
+        @IBOutlet weak var DayHighTemp7: UILabel!
+        @IBOutlet weak var DayHighTemp8: UILabel!
+        @IBOutlet weak var TempHighTemp9: UILabel!
+        //Low Temp
+        @IBOutlet weak var DayLowTemp0: UILabel!
+        @IBOutlet weak var DayLowTemp1: UILabel!
+        @IBOutlet weak var DayLowTemp2: UILabel!
+        @IBOutlet weak var DayLowTemp3: UILabel!
+        @IBOutlet weak var DayLowTemp4: UILabel!
+        @IBOutlet weak var DayLowTemp5: UILabel!
+        @IBOutlet weak var DayLowTemp6: UILabel!
+        @IBOutlet weak var DayLowTemp7: UILabel!
+        @IBOutlet weak var DayLowTemp8: UILabel!
+        @IBOutlet weak var DayLowTemp9: UILabel!
+    
     //SearchBar
     @IBOutlet weak var searchBar: UITextField!
 
