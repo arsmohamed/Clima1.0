@@ -4,10 +4,10 @@
 //
 //  Created by Mero on 2021-10-28.
 //
-
+// UITextFieldDelegate allow the class to get access the text field
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - OUTLET
     //Containers View
@@ -104,19 +104,15 @@ class ViewController: UIViewController {
         @IBOutlet weak var DayLowTemp7: UILabel!
         @IBOutlet weak var DayLowTemp8: UILabel!
         @IBOutlet weak var DayLowTemp9: UILabel!
-    
     //SearchBar
     @IBOutlet weak var searchBar: UITextField!
-
-    //MARK: - ACTION
-        
-    
+            
     //MARK: - code
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        // making the text field access the delegate proparty to set it to current class
+        searchBar.delegate = self
         //Containers round edges
         topContainerV.layer.cornerRadius = 21
         middleContainerV.layer.cornerRadius = 21
@@ -143,6 +139,32 @@ class ViewController: UIViewController {
         )
     }
 
-
+    //MARK: - ACTION
+    
+    //method to return the text inside the textfild because we created the delegate and assgined to self
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //have access to what inside the text field
+        print(searchBar.text!)
+        //close the keyboard once it is done type
+        searchBar.endEditing(true)
+        return true
+    }
+    //no for validation checking if the user typed anything in the text field
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if searchBar.text != "" {
+            searchBar.placeholder = "Search"
+            return true
+        } else {
+            //returning a massage to the user to add something in the field
+            searchBar.placeholder = "Please add a location"
+            return false // this will make the text field not stop editing
+        }
+    }
+    // return the text field to be empty after it is done editing
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //before clearning the text field saving the location
+        searchBar.text=""
+    }
+    
 }
 
