@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvA-ob-P4b" userLabel="NavigationArea">
-                                <rect key="frame" x="0.0" y="831" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="831" width="414" height="54"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eQh-Se-caA">
                                         <rect key="frame" x="10" y="5" width="394" height="40"/>
@@ -57,13 +57,13 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.23937927302489706" green="0.24847929270003244" blue="0.26405727424749159" alpha="0.90272177419354838" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.25061571599999999" green="0.25083461400000001" blue="0.25064963099999998" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.28311362128050932" green="0.29349931014457814" blue="0.31074937290969895" alpha="0.40062689012096775" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="32i-pV-XcT"/>
                                     <constraint firstAttribute="trailing" secondItem="eQh-Se-caA" secondAttribute="trailing" constant="10" id="B5g-vN-sou"/>
                                     <constraint firstItem="eQh-Se-caA" firstAttribute="leading" secondItem="fvA-ob-P4b" secondAttribute="leading" constant="10" id="WZd-2d-aJM"/>
                                     <constraint firstItem="eQh-Se-caA" firstAttribute="top" secondItem="fvA-ob-P4b" secondAttribute="top" constant="5" id="YKC-Kq-19u"/>
+                                    <constraint firstAttribute="height" constant="54" id="hHQ-2D-SQG"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" translatesAutoresizingMaskIntoConstraints="NO" id="DEt-Mb-r2p">
@@ -1693,15 +1693,24 @@
                                     <constraint firstItem="ek9-Uj-M7F" firstAttribute="width" secondItem="DEt-Mb-r2p" secondAttribute="width" id="yaB-ae-Fb8"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkm-pg-Kzk" userLabel="BottomView">
+                                <rect key="frame" x="0.0" y="885" width="414" height="11"/>
+                                <color key="backgroundColor" red="0.25061571599999999" green="0.25083461400000001" blue="0.25064963099999998" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" name="Container"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.96362072450000003" green="0.98282193600000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DEt-Mb-r2p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6ug-32-7Mu"/>
+                            <constraint firstAttribute="bottom" secondItem="Dkm-pg-Kzk" secondAttribute="bottom" id="7zU-32-dE5"/>
                             <constraint firstItem="fvA-ob-P4b" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="82e-Y5-Lti"/>
                             <constraint firstItem="fvA-ob-P4b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VA8-JB-Fh3"/>
                             <constraint firstItem="fvA-ob-P4b" firstAttribute="top" secondItem="DEt-Mb-r2p" secondAttribute="bottom" constant="1" id="aOG-vN-Rcz"/>
-                            <constraint firstAttribute="bottom" secondItem="fvA-ob-P4b" secondAttribute="bottom" id="t6w-l3-Zz7"/>
+                            <constraint firstItem="Dkm-pg-Kzk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aob-tq-NNC"/>
+                            <constraint firstAttribute="trailing" secondItem="Dkm-pg-Kzk" secondAttribute="trailing" id="cTh-iZ-n7x"/>
+                            <constraint firstItem="Dkm-pg-Kzk" firstAttribute="top" secondItem="fvA-ob-P4b" secondAttribute="bottom" id="qhw-0Z-fWa"/>
+                            <constraint firstAttribute="bottom" secondItem="fvA-ob-P4b" secondAttribute="bottom" constant="11" id="t6w-l3-Zz7"/>
                             <constraint firstItem="DEt-Mb-r2p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zjA-nt-nGo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DEt-Mb-r2p" secondAttribute="trailing" id="zze-wK-jMS"/>
                         </constraints>
@@ -1784,6 +1793,7 @@
                         <outlet property="DayLowTemp9" destination="v0K-t5-9c0" id="nJK-b0-9xG"/>
                         <outlet property="FutureForcaset" destination="1Jf-gh-XAQ" id="vsX-zG-atN"/>
                         <outlet property="Location" destination="dGT-fd-Ddw" id="aCh-YP-a2N"/>
+                        <outlet property="SearchContainer" destination="fvA-ob-P4b" id="zDy-uj-MGG"/>
                         <outlet property="TempHighTemp9" destination="7Lh-7q-VBw" id="6ae-Iz-tc6"/>
                         <outlet property="TopCurrentTemperature" destination="IcK-wY-RPR" id="PjF-eF-YNl"/>
                         <outlet property="bottomContainerV" destination="cYw-3F-ccX" id="dNg-Eo-L0l"/>

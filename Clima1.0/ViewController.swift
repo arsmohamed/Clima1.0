@@ -106,23 +106,45 @@ class ViewController: UIViewController, UITextFieldDelegate {
         @IBOutlet weak var DayLowTemp9: UILabel!
     //SearchBar
     @IBOutlet weak var searchBar: UITextField!
-            
+    @IBOutlet weak var SearchContainer: UIView!
+    
     //MARK: - code
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialSetup()
+    }
+    
+    //to unregister these function
+    deinit {
+        //stop listening to the keyboard showning and hiding event
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    //MARK: - ACTION
+    
+    //setup
+    func initialSetup() {
+        //listen to the keyboard event
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        //hiding the keyboard if any place around the commponent is clicked
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hidekeyboard)))
         // making the text field access the delegate proparty to set it to current class
         searchBar.delegate = self
         //Containers round edges
         topContainerV.layer.cornerRadius = 21
         middleContainerV.layer.cornerRadius = 21
         bottomContainerV.layer.cornerRadius = 21
+        SearchContainer.layer.cornerRadius = 18
         TopCurrentTemperature.layer.cornerRadius = 100
         //this to allow the edges to cut
         topContainerV.layer.masksToBounds = true
         middleContainerV.layer.masksToBounds = true
         bottomContainerV.layer.masksToBounds = true
         TopCurrentTemperature.layer.masksToBounds = true
+        SearchContainer.layer.masksToBounds = true
         //placeholder coloer
         searchBar.attributedPlaceholder = NSAttributedString(
             string: "Search",
@@ -138,9 +160,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
             attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]
         )
     }
-
-    //MARK: - ACTION
-    
+    //    //private fun to hide the keyboard
+    @objc func hidekeyboard() {
+        print("is it working ")
+        self.view.endEditing(true)
+        searchBar.endEditing(true)
+    }
+    //checking if the keyboard will show
+    @objc func keyboardWillShow (notification: NSNotification){
+        if let keyboardFrame : NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
+        NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            self.view.frame.origin.y = -keyboardHeight + 11 // 11 is the height of bottom container
+        } else {return }
+    }
+    //checking if the keyboard will hide
+    @objc func keyboardWillHide () {
+        self.view.frame.origin.y = 0
+    }
     //method to return the text inside the textfild because we created the delegate and assgined to self
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //have access to what inside the text field
@@ -150,21 +187,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     //no for validation checking if the user typed anything in the text field
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if searchBar.text != "" {
-            searchBar.placeholder = "Search"
-            return true
-        } else {
-            //returning a massage to the user to add something in the field
-            searchBar.placeholder = "Please add a location"
-            return false // this will make the text field not stop editing
-        }
-    }
+//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//        if searchBar.text != "" {
+//            searchBar.placeholder = "Search"
+//            return true
+//        } else {
+//            //returning a massage to the user to add something in the field
+//            searchBar.placeholder = "Please add a location"
+//            return false // this will make the text field not stop editing
+//        }
+//    }
     // return the text field to be empty after it is done editing
     func textFieldDidEndEditing(_ textField: UITextField) {
         //before clearning the text field saving the location
         searchBar.text=""
     }
-    
+
 }
 
