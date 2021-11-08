@@ -154,7 +154,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         )
         //underlining weather massage
         CurrentWeathMassage.attributedText = NSAttributedString(
-            string: "Partly cloudy condition expected around 5AM. Partly cloudy condition expected around 5AM. ",
+            string: "Partly cloudy condition expected around 5AM.",
             attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]
         )
         FutureForcaset.attributedText = NSAttributedString(

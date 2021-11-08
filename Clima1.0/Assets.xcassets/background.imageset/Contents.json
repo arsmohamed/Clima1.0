@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "685120 copy.pdf",
+      "filename" : "DayMode copy.pdf",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "685120 copy-1.pdf",
+      "filename" : "DayMode copy-1.pdf",
       "idiom" : "universal"
     },
     {
@@ -21,7 +21,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "s-1.pdf",
+      "filename" : "NightMode.pdf",
       "idiom" : "universal"
     }
   ],
