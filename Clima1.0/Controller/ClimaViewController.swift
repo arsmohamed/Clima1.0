@@ -107,8 +107,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //SearchBar
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var SearchContainer: UIView!
-    
+
     //MARK: - code
+    
+    var TheWeatherManager = WeatherManager() //getting info from the model to the URL
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -199,7 +201,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //    }
     // return the text field to be empty after it is done editing
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
         //before clearning the text field saving the location
+        if let city = searchBar.text {
+            //passing down the name of the city that we are looking for and it should be a string
+            TheWeatherManager.featchWeather(cityname: city)
+        }
         searchBar.text=""
     }
 
