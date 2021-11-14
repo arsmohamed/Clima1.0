@@ -6,6 +6,7 @@
 //
 // UITextFieldDelegate allow the class to get access the text field
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,7 +16,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var middleContainerV: UIView!
     @IBOutlet weak var bottomContainerV: UIView!
     @IBOutlet weak var TopCurrentTemperature: UIView!
-    
+    //testing Background Layer video
+    private var playerLayer = AVPlayerLayer()
+    private var playerLooper: AVPlayerLooper?
+    @IBOutlet weak var VideoLayer: UIImageView!
     //Top
     @IBOutlet weak var Location: UILabel!
     @IBOutlet weak var CurrentTempIcon: UIImageView!
@@ -161,8 +165,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
             string: "10-Day FORECAST",
             attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]
         )
+        playVideo()
     }
-    //    //private fun to hide the keyboard
+
+    //frozen video player
+    func playVideo() {
+        //load Player
+        guard let path = Bundle.main.path(forResource: "Sunset", ofType: "mp4") else {return}
+        let player = AVQueuePlayer(url: URL(fileURLWithPath: path))
+        let playerLayer = AVPlayerLayer(player: player)
+        let fileUrl = Bundle.main.url(forResource: "Sunset", withExtension: "mp4")!
+        let playerItem = AVPlayerItem(url: fileUrl)
+        //setup player
+        playerLayer.frame = self.view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        self.VideoLayer.layer.addSublayer(playerLayer)
+        //Looping
+        playerLooper = AVPlayerLooper(player: player, templateItem: playerItem)
+        player.play()
+    }
+
+    //private fun to hide the keyboard
     @objc func hidekeyboard() {
         print("is it working ")
         self.view.endEditing(true)

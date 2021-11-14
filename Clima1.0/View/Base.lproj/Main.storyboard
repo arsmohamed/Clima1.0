@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5Yp-dY-rTJ">
-                                <rect key="frame" x="0.0" y="0.0" width="880" height="1085"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvA-ob-P4b" userLabel="NavigationArea">
@@ -1806,6 +1806,7 @@
                         <outlet property="SearchContainer" destination="fvA-ob-P4b" id="zDy-uj-MGG"/>
                         <outlet property="TempHighTemp9" destination="7Lh-7q-VBw" id="6ae-Iz-tc6"/>
                         <outlet property="TopCurrentTemperature" destination="IcK-wY-RPR" id="PjF-eF-YNl"/>
+                        <outlet property="VideoLayer" destination="5Yp-dY-rTJ" id="Kpx-sg-wVL"/>
                         <outlet property="bottomContainerV" destination="cYw-3F-ccX" id="dNg-Eo-L0l"/>
                         <outlet property="currentWeatherFeelLike" destination="ztv-Bt-ZfN" id="0Iw-9a-ST0"/>
                         <outlet property="middleContainerV" destination="hDz-wz-fo0" id="M50-vO-cmu"/>

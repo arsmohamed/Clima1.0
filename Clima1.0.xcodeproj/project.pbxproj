@@ -16,6 +16,7 @@
 		CFC0C144272B7378003F2E87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFC0C142272B7378003F2E87 /* LaunchScreen.storyboard */; };
 		CFC0C14F272B7378003F2E87 /* Clima1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0C14E272B7378003F2E87 /* Clima1_0Tests.swift */; };
 		CFC0C15A272B7378003F2E87 /* Clima1_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0C159272B7378003F2E87 /* Clima1_0UITests.swift */; };
+		CFED61B12741D90B00187219 /* Sunset.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFED61B02741D90B00187219 /* Sunset.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CFC0C155272B7378003F2E87 /* Clima1.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Clima1.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC0C159272B7378003F2E87 /* Clima1_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima1_0UITests.swift; sourceTree = "<group>"; };
 		CFC0C15B272B7378003F2E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFED61B02741D90B00187219 /* Sunset.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sunset.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				CFC0C140272B7378003F2E87 /* Assets.xcassets */,
 				CFC0C142272B7378003F2E87 /* LaunchScreen.storyboard */,
 				CFC0C145272B7378003F2E87 /* Info.plist */,
+				CFED61B02741D90B00187219 /* Sunset.mp4 */,
 			);
 			path = Clima1.0;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFED61B12741D90B00187219 /* Sunset.mp4 in Resources */,
 				CFC0C144272B7378003F2E87 /* LaunchScreen.storyboard in Resources */,
 				CFC0C141272B7378003F2E87 /* Assets.xcassets in Resources */,
 				CFC0C13F272B7377003F2E87 /* Main.storyboard in Resources */,
