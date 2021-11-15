@@ -187,7 +187,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     //private fun to hide the keyboard
     @objc func hidekeyboard() {
-        print("is it working ")
+//        print("is it working ")
         self.view.endEditing(true)
         searchBar.endEditing(true)
     }
@@ -206,7 +206,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //method to return the text inside the textfild because we created the delegate and assgined to self
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //have access to what inside the text field
-        print(searchBar.text!)
+//        print(searchBar.text!)
         //close the keyboard once it is done type
         searchBar.endEditing(true)
         return true
@@ -229,6 +229,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let city = searchBar.text {
             //passing down the name of the city that we are looking for and it should be a string
             TheWeatherManager.featchWeather(cityname: city)
+            TheWeatherManager.featchGeoCode(cityname: city)
         }
         searchBar.text=""
     }
